@@ -2,6 +2,7 @@
 import json
 from time import sleep
 import os 
+import requests
 
 #Funções
 def Write():
@@ -61,6 +62,9 @@ def VerificaCliente():
         sleep(2)   
         return True
     return False
+
+
+URL = "http://127.0.0.1:8000"
 
 #Caso o arquivo não exista no diretorio
 if os.path.exists("sistema.json") == False:

@@ -14,5 +14,4 @@ while True:
     }
 
     response = requests.post(f"{URL}/cadastrar", json=registro)
-    print(response.status_code)
-    print(response.json())
+   
