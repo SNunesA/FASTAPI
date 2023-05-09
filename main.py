@@ -7,6 +7,11 @@ app = FastAPI()
 tarefas = dict()
 id_count = 0
 
+
+@app.get('/')
+def hello():
+    return "Servidor no ar"
+
 # Métodos CRUD
 # Quando um cliente envia uma requisição HTTP POST para /cadastrar, a função cadastrar que recebe um objeto Request como argumento é executada.
 @app.post("/cadastrar")
@@ -20,6 +25,7 @@ async def cadastrar(request: Request):
     dados = await request.json()
     tarefas[id_] = dados
     print(tarefas)
+    return {"id": id_}
      
 # Quando um cliente envia uma requisição HTTP GET para /listar, a função listar é executada.
 @app.get('/listar')
